@@ -1,0 +1,90 @@
+* {
+  font-family: 'NanumSquareNeoLight','NanumSquareNeo','NanumSquareNeoBold','NanumSquareNeoExtraBold','NanumSquareNeoHeavy';
+  color: #000;
+}
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: #fff;
+  transition: all 0.5s;
+}
+.headerMain {
+  display: flex;
+  padding: 10px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+.headerTitle {
+  margin-right: 20px;
+}
+.headerSerch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.headerSerachBack {
+  background: rgba(0, 0, 0, 0.5);
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.5s;
+}
+.headerSerachBack input {
+  display: none;
+}
+.headerSerachBack.headerSon {
+  width: 500px;
+}
+.headerSerachBack.headerSon input {
+  display: block;
+  width: 80%;
+  height: 50%;
+}
+.headerSerachBack img {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: 13px;
+}
+header .headerList {
+  padding: 10px 50px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+  height: 46px;
+  box-sizing: border-box;
+}
+header .headerList ul {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+header .headerList li {
+  color: #ccc;
+}
+header .headerList li.headerList_on {
+  color: #000;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #000;
+  transition: all 0.2s;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 10px 50px;
+  border-top: 2px solid rgba(0, 0, 0, 0.7);
+}
+footer img {
+  width: 25px;
+  height: 25px;
+}
+footer .footerMain {
+  display: flex;
+  justify-content: space-between;
+}

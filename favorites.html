@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>favorites</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="css/jquery-ui.theme.min.css" />
+    <link rel="stylesheet" href="css/intro.css" />
+    <link rel="stylesheet" href="css/header.css">
+    <!-- jquery -->
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <!-- moment -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="js/setting.js"></script>
+
+    <style>
+      .favorites {
+        margin: 200px 0;
+        padding: 0 50px;
+      }
+      .favorites h2 {
+        font-size: 32px;
+        margin: 20px 0;
+      }
+      .favorites-gnb {
+        display: flex;
+        margin-bottom: 20px;
+      }
+      .favorites-main {
+        width: 100%;
+      }
+      .favorites-main img {
+        width: 100%;
+        border-radius: 25px;
+      }
+      .favorites .share {
+        display: flex;
+        justify-content: right;
+      }
+      .favorites .share img {
+        display: flex;
+        justify-content: right;
+        margin-right: 15px;
+      }
+      .favor_sec {
+        margin-top: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="headerMain">
+        <div class="headerTitle">
+          <a href="main.html"><img src="img/limbo_logo.png" alt="" /></a>
+        </div>
+        <div class="headerSerch">
+          <div class="headerSerachBack">
+            <input type="text" placeholder="검색기능 구현중" />
+            <img src="img/free-icon-search-149852.png" alt="" class="serchMe" />
+          </div>
+        </div>
+      </div>
+      <div class="headerList">
+        <ul>
+          <li>드로잉</li>
+          <li>일러스트</li>
+          <li>아크릴화/파스텔화</li>
+          <li>유화/수채화</li>
+        </ul>
+      </div>
+    </header>
+    <div class="favorites">
+      <div>
+        <h2>즐겨찾기</h2>
+      </div>
+      <div class="favor_sec">
+        <div class="favorites-gnb">
+          <p class="name">작가정보</p>
+          <p class="date"></p>
+        </div>
+        <div class="favorites-main">
+          <img src="img/banner01.png" alt="" />
+        </div>
+        <div class="share">
+          <img src="img/heart.png" alt="" class="main_heart">
+          <img src="img/share.png" alt="" />
+        </div>
+      </div>
+      <div class="favor_sec">
+        <div class="favorites-gnb">
+          <p class="name">작가정보</p>
+          <p class="date"></p>
+        </div>
+        <div class="favorites-main">
+          <img src="img/banner01.png" alt="" />
+        </div>
+        <div class="share">
+          <img src="img/heart.png" alt="" class="main_heart">
+          <img src="img/share.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footerMain">
+        <a href="main.html"><img src="img/home_6051755.png" alt="" /></a>
+        <img src="img/free-icon-search-149852.png" alt="" class="serchMe" />
+        <a href=""><img src="img/heart.png" alt="" /></a>
+        <a href="upload.html"
+          ><img src="img/free-icon-file-upload-2985037.png" alt=""
+        /></a>
+        <a href="mypage.html"
+          ><img src="img/free-icon-user-9376373.png" alt=""
+        /></a>
+      </div>
+    </footer>
+  </body>
+</html>

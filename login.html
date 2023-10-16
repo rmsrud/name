@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/login.css">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <!-- moment -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="js/setting.js"></script>
+    
+</head>
+<body>
+    <div id="wrap">
+        <h2>Login</h2>
+        <div class="inner">
+            <div class="login_box">
+                <input type="text" class="form-control" id="loginEmail" placeholder="이메일">
+                <input type="text" class="form-control" id="loginPassword" placeholder="비밀번호">
+            </div>
+            <div class="util">
+                <a href="#"><span>아이디 찾기</span></a>
+                <a href="#"><span>비밀번호 찾기</span></a>
+                <a href="sighIn.html"><span>회원가입</span></a>
+            </div>
+            <div class="join">
+                <button type="submit" id="loginButton">JOIN</button>
+            </div>
+            <div class="auth">
+                <button id="loginGoogle">
+                    <img src="img/btn_google_signin_dark_normal_web.png" alt="구글로 로그인">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

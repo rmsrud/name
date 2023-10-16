@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>uplode</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="css/jquery-ui.theme.min.css" />
+    <link rel="stylesheet" href="css/intro.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <!-- jquery -->
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <!-- moment -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="js/setting.js"></script>
+    <style>
+      .uplode {
+        width: 100%;
+        padding: 0 50px;
+        margin-top: 170px;
+        box-sizing: border-box;
+      }
+      .uplode div {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+      }
+      .uplode .title .title_input {
+        width: 49%;
+      }
+      #category {
+        width: 49%;
+        border-radius: 20px;
+        height: 30px;
+        padding: 0 15px;
+        border: 2px solid #555;
+        box-sizing: border-box;
+      }
+      .uplode div input {
+        border-radius: 20px;
+        width: 100%;
+        height: 30px;
+        padding: 0 15px;
+        border: 2px solid #555;
+        box-sizing: border-box;
+      }
+      textarea {
+        width: 100%;
+        height: 200px;
+        border-radius: 25px;
+        padding: 20px;
+        border: 2px solid #555;
+      }
+      .uplode .button {
+        border-radius: 25px;
+        justify-content: center;
+      }
+      .uplode .button > button {
+        background: none;
+        border-radius: 15px;
+        padding: 10px 30px;
+      }
+      #uploadeFile {
+        max-width: 100%;
+        border: 2px solid #555;
+        display: block;
+        padding: 0 15px;
+        appearance: none;
+        border: 2px solid #555;
+        font-size: 12px;
+        color: #666;
+        height: 30px;
+        border-radius: 25px;
+        line-height: 27px;
+        box-sizing: border-box;
+      }
+      input[type="file"]::file-selector-button {
+        border: none;
+        height: 100%;
+        background: #fff;
+        border-right: 1px solid #ccc;
+      }
+
+      #send {
+        cursor: pointer;
+        border: 2px solid #555;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="headerMain">
+        <div class="headerTitle">
+          <a href="main.html"><img src="img/limbo_logo.png" alt="" /></a>
+        </div>
+        <div class="headerSerch">
+          <div class="headerSerachBack">
+            <input type="text" placeholder="검색기능 구현중" />
+            <img src="img/free-icon-search-149852.png" alt="" class="serchMe" />
+          </div>
+        </div>
+      </div>
+      <div class="headerList">
+        <ul>
+          <li>드로잉</li>
+          <li>일러스트</li>
+          <li>아크릴화/파스텔화</li>
+          <li>유화/수채화</li>
+        </ul>
+      </div>
+    </header>
+    <div class="uplode">
+      <div>
+        <!-- <label for="uploadeFile" class="uploadeFile_label">업로드</label> -->
+        <input type="file" id="uploadeFile" placeholder="업로드" />
+      </div>
+      <div class="title">
+        <input type="text" class="title_input" id="title" placeholder="제목">
+        <select id="category">
+          <option>카테고리를 선택해주세요</option>
+          <option>drawing</option>
+          <option>illustration</option>
+          <option>acryl</option>
+          <option>Watercolor</option>
+        </select>
+        <p id="blank"></p>
+
+      </div>
+      <div>
+        <input type="text" id="" placeholder="drawing/" />
+      </div>
+      <div>
+        <textarea type="text" id="content">이미지설명</textarea>
+      </div>
+      <div class="button"><button id="send">올리기</button></div>
+    </div>
+    <footer>
+      <div class="footerMain">
+        <a href="main.html"><img src="img/home_6051755.png" alt="" /></a>
+        <img src="img/free-icon-search-149852.png" alt="" class="serchMe" />
+        <a href="favorites.html"><img src="img/heart.png" alt="" /></a>
+        <a href="upload.html"
+          ><img src="img/free-icon-file-upload-2985037.png" alt=""
+        /></a>
+        <a href="mypage.html"
+          ><img src="img/free-icon-user-9376373.png" alt=""
+        /></a>
+      </div>
+    </footer>
+    <!-- <script>
+      //database 연결
+      const db = firebase.firestore(); //텍스트 중심의 데이터 저장소
+      const storage = firebase.storage(); //이미지나 오디오 저장소
+
+      //content 입력영역에 포커스가 들어가면 비워줌
+      $("#content").on("focus", () => {
+        $("#content").val("");
+      });
+
+      //상품정보 업로드
+      $("#send").on("click", (e) => {
+        e.preventDefault();
+
+        //이미지 업로드할 때 반드시 명시하는 변수
+
+        let file = document.querySelector("#uploadeFile").files[0];
+        let storageRef = storage.ref();
+        let storageURL = storageRef.child("image/" + file.name); //이미지를 저장할 폴더지정
+        let storageUpload = storageURL.put(file);
+
+        storageUpload.on(
+          "state_changed",
+          //변화시 동작 - 업로드 중
+          null,
+          //에러시 동작
+          (error) => {
+            console.log("실패사유는", error);
+          },
+          //이미지 업로드 성공완료시
+          () => {
+            storageUpload.snapshot.ref.getDownloadURL().then((url) => {
+              //console.log('업로드된 경로는', url)
+
+              let uploadProduct = {
+                이름: $("#name").val(),
+                제목: $("#title").val(),
+                설명: $("#content").val(),
+                /* 가격: Number($("#price").val()), //가격정보가 문자열이 되도록 숫자형 데이터 타입으로 변환 */
+                날짜: new Date(),
+                이미지: url,
+                uid: JSON.parse(localStorage.getItem("user")).uid,
+                작성자: JSON.parse(localStorage.getItem("user")).displayName,
+              };
+              console.log(uploadProduct.상품명);
+              //에러체크
+              db.collection("limbo")
+                .add(uploadProduct)
+                .then((result) => {
+                  //성공 후
+                  console.log(result.id);
+                  confirm("업로드가 완료되었습니다. 메인페이지로 이동합니다.");
+                  window.location.href = "main.html";
+                })
+                .catch((err) => {
+                  console.log(err);
+                });
+            });
+          }
+        );
+      });
+    </script> -->
+    <script>
+      //database 연결
+      const db = firebase.firestore(); //텍스트 중심의 데이터 저장소
+      const storage = firebase.storage(); //이미지나 오디오 저장소
+
+      //content 입력영역에 포커스가 들어가면 비워줌
+      $("#content").on("focus", () => {
+        $("#content").val("");
+      });
+
+      let category = $("#category");
+
+      let text = category.on("change", function () {
+        //selectBox에서 선택한 옵션의 텍스트가 저장되는 변수생성
+        optText = category.find(":selected").text();
+        console.log(optText);
+      });
+
+      //상품정보 업로드
+      $("#send").on("click", (e) => {
+        e.preventDefault();
+
+        //이미지 업로드할 때 반드시 명시하는 변수
+
+        let file = document.querySelector("#uploadeFile").files[0];
+        let storageRef = storage.ref();
+        let storageURL = storageRef.child("image/" + file.name); //이미지를 저장할 폴더지정
+        let storageUpload = storageURL.put(file);
+
+        storageUpload.on(
+          "state_changed",
+          //변화시 동작 - 업로드 중
+          null,
+          //에러시 동작
+          (error) => {
+            console.log("실패사유는", error);
+          },
+          //이미지 업로드 성공완료시
+          () => {
+            storageUpload.snapshot.ref.getDownloadURL().then((url) => {
+              //console.log('업로드된 경로는', url)
+
+              let uploadProduct = {
+                제목: $("#title").val(),
+                카테고리: optText,
+                설명: $("#content").val(),
+                날짜: new Date(),
+                이미지: url,
+                uid: JSON.parse(localStorage.getItem("user")).uid,
+                작성자: JSON.parse(localStorage.getItem("user")).displayName,
+              };
+              console.log(uploadProduct.상품명);
+              //에러체크
+              db.collection(optText)
+                .add(uploadProduct)
+                .then((result) => {
+                  //성공 후
+                  console.log(result.id);
+                  confirm("업로드가 완료되었습니다. 메인페이지로 이동합니다.");
+                  window.location.href = "main.html";
+                })
+                .catch((err) => {
+                  console.log(err);
+                });
+            });
+          }
+        );
+
+
+
+        storageUpload.on(
+          "state_changed",
+          //변화시 동작 - 업로드 중
+          null,
+          //에러시 동작
+          (error) => {
+            console.log("실패사유는", error);
+          },
+          //이미지 업로드 성공완료시
+          () => {
+            storageUpload.snapshot.ref.getDownloadURL().then((url) => {
+              //console.log('업로드된 경로는', url)
+
+              let uploadProduct = {
+                제목: $("#title").val(),
+                카테고리: optText,
+                설명: $("#content").val(),
+                날짜: new Date(),
+                이미지: url,
+                uid: JSON.parse(localStorage.getItem("user")).uid,
+                작성자: JSON.parse(localStorage.getItem("user")).displayName,
+              };
+              console.log(uploadProduct.상품명);
+              //에러체크
+              db.collection("limbo")
+                .add(uploadProduct)
+                .then((result) => {
+                  //성공 후
+                  console.log(result.id);
+                  confirm("업로드가 완료되었습니다. 메인페이지로 이동합니다.");
+                  window.location.href = "main.html";
+                })
+                .catch((err) => {
+                  console.log(err);
+                });
+            });
+          }
+        );
+      });
+    </script>
+  </body>
+</html>

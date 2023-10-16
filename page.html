@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상세페이지</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/header.css">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <!-- moment -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="js/setting.js"></script>
+    <script src="js/page.js"></script>
+    <style>
+      .page {
+        width: 100%;
+      }
+      .pageContainer {
+        width: 100%;
+      }
+      .page img {
+        display: block;
+      }
+      .page .page-img {
+        width: 100%;
+        height: 60%;
+       }
+      .page .page-img img {
+        max-width: 100%;
+
+      }
+      .page-text {
+        padding: 10px 50px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .page-text p {
+        margin-bottom: 20px;
+      }
+      .page-text .text-left {
+        display: flex;
+      }
+      .page-text .text-left a {
+        margin-right: 15px;
+      }
+      .page-text .text-right {
+        display: flex;
+      }
+      .page-text div a:first-child {
+        margin-right: 15px;
+      }
+      .page-area .page-section {
+        margin-top: 30px;
+        padding: 10px 50px;
+        border-bottom: 1px solid #111;
+      }
+      .page-area .page-section p {
+        margin-top: 20px;
+      }
+      .page-main {
+        margin: 50px auto;
+        /* width: 668px; */
+        box-sizing: border-box;
+        padding: 0 50px;
+      }
+      .page-main > a > img {
+        margin-top: 15px;
+        width: 100%;
+        border-radius: 50px;
+      }
+      .hon {
+        background: rgba(0, 0, 0, 0);
+      }
+      .hon .headerList {
+        display: none;
+      }
+      .hon div {
+        border-bottom: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="hon">
+      <div class="headerMain">
+        <div class="headerTitle">
+          <a href="main.html"><img src="img/limbo_logo.png" alt="" /></a>
+        </div>
+        <div class="headerSerch">
+          <div class="headerSerachBack">
+            <input type="text" placeholder="검색기능 구현중" />
+            <img src="img/free-icon-search-149852.png" alt="" class="serchMe" />
+          </div>
+        </div>
+      </div>
+      <div class="headerList">
+        <ul>
+          <li>드로잉</li>
+          <li>일러스트</li>
+          <li>아크릴화/파스텔화</li>
+          <li>유화/수채화</li>
+        </ul>
+      </div>
+    </header>
+    <div class="page">
+      <div class="pageContainer">
+        <!-- <div class="page-img">
+          <img src="img/photoshop001.png" alt="" class="artist_img">
+        </div>
+        <div class="page-footer">
+          <div class="page-text">
+            <div class="text-left">
+              <a href="#"><p class="Kategorie">드로잉</p></a>
+              <a href="#"><p class="tag">#태그</p></a>
+            </div>
+            <div class="text-right">
+              <a href="#"><img src="img/download.png" alt="" /></a>
+              <a href="#"><p>팔로잉</p></a>
+            </div>
+          </div>
+          <div class="page-text">
+            <div class="text-left">
+              <a href="artist_page.html"><p class="name">작가</p></a>
+              <a href="#"><p class="date">작성일</p></a>
+            </div>
+            <div class="text-right">
+              <a href="#"><img src="img/heart.png" alt="" /></a>
+              <a href="#"><img src="img/share.png" alt="" /></a>
+            </div>
+          </div>
+          <div class="page-text">
+            <div class="text">
+              <a href="#"><p>설명</p></a>
+              <p class="text_info">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia sed
+                aliquid, sapiente id cumque architecto earum ratione! Doloremque
+                doloribus perspiciatis odio ipsa repudiandae? Tempora ipsa cum
+                modi officiis accusantium tenetur!
+              </p>
+            </div>
+          </div>
+        </div> -->
+      </div>
+      <div class="page-area">
+        <div class="page-section">
+          <p>유사한 이미지들</p>
+        </div>
+        <div class="page-main">
+          <a href="artist_page.html"><p class="name">작가정보</p></a>
+          <a href="#"><img src="img/banner01.png" alt="" class="artist_img"></a>
+        </div>
+        <div class="page-main">
+          <a href="#"><p class="name">작가정보</p></a>
+          <a href="#"><img src="img/banner01.png" alt="" class="artist_img"></a>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footerMain">
+        <a href="main.html"><img src="img/home_6051755.png" alt="" /></a>
+        <img src="img/free-icon-search-149852.png" alt="" class="serchMe" />
+        <a href="favorites.html"><img src="img/heart.png" alt="" /></a>
+        <a href="upload.html"
+          ><img src="img/free-icon-file-upload-2985037.png" alt=""
+        /></a>
+        <a href="mypage.html"
+          ><img src="img/free-icon-user-9376373.png" alt=""
+        /></a>
+      </div>
+    </footer>
+    <script>
+      //database 연결
+      const db = firebase.firestore(); //텍스트 중심의 데이터 저장소
+      const storage = firebase.storage(); //이미지나 오디오 저장소
+
+      let queryString = new URLSearchParams(window.location.search); //쿼리 스트링을 오브젝트로 변환
+      console.log(queryString.get('id'));
+
+      //doc가 가지고 있는 id값의 doc 정보를 보기
+      db.collection("limbo")
+        .doc(queryString.get("id"))
+        .get()
+        .then((result) => {
+          console.log(result.data());
+
+          let detailInfo = `
+            <div class="page-img">
+              <img src="${result.data().이미지}" alt="" class="artist_img">
+            </div>
+            <div class="page-footer">
+              <div class="page-text">
+                <div class="text-left">
+                  <a href="#"><p class="Kategorie">드로잉</p></a>
+                  <a href="#"><p class="tag">#태그</p></a>
+                </div>
+                <div class="text-right">
+                  <a href="#"><img src="img/download.png" alt="" /></a>
+                  <a href="#"><p>팔로잉</p></a>
+                </div>
+              </div>
+              <div class="page-text">
+                <div class="text-left">
+                  <a href="artist_page.html"><p class="name">${result.data().작성자}</p></a>
+                  <a href="#"><p class="date"></p></a>
+                </div>
+                <div class="text-right">
+                  <a href="#"><img src="img/heart.png" alt="" /></a>
+                  <a href="#"><img src="img/share.png" alt="" /></a>
+                </div>
+              </div>
+              <div class="page-text">
+                <div class="text">
+                  <a href="#"><p>설명</p></a>
+                  <p class="text_info">
+                    ${result.data().설명}
+                  </p>
+                </div>
+              </div>
+            </div>`;
+          document
+            .querySelector(".pageContainer")
+            .insertAdjacentHTML("beforeend", detailInfo);
+        });
+
+      /* $("#modifyButton").on("click", function () {
+        window.location.href = "detail_modify.html?id=" + queryString.get("id");
+      }); */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>myPage</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/jquery-ui.min.css" />
+  <link rel="stylesheet" href="css/jquery-ui.theme.min.css" />
+  <link rel="stylesheet" href="css/header.css">
+  <!-- jquery -->
+  <script src="js/jquery-3.7.0.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <!-- firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+  <!-- moment -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+</head>
+<style>
+  .myPage_header {
+    background: #ccc;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .myPage_header .mpImg-1 {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #000;
+    border-radius: 80px;
+    text-align: center;
+  }
+  .myPage_header .mpImg-1 img {
+    display: block;
+    width: 100%;
+    border-radius: 80px;
+  }
+  .myPage_header .mpText {
+    text-align: center;
+    margin-top: 25px;
+    line-height: 2;
+    font-weight: bold;
+  }
+  .MPtab {
+    box-sizing: border-box;
+  }
+  .MPtab ul {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #000;
+    box-sizing: border-box;
+  }
+  .MPtab ul li {
+    padding: 5px;
+    margin: 10px;
+    box-sizing: border-box;
+   }
+  .MPtab_1 {
+    border-bottom: 2px solid #000;
+    box-sizing: border-box;
+  }
+  .MP_recentPage , .MP_favorPage {
+    padding: 0 50px;
+    display: none;
+  }
+  .MP_page_on {
+    display: block;
+  }
+  /* favor */
+  .favorites-gnb {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  .favorites-main {
+    width: 100%;
+  }
+  .favorites-main img {
+    width: 100%;
+    border-radius: 25px;
+  }
+  .share {
+    display: flex;
+    justify-content: right;
+  }
+  .share img {
+    display: flex;
+    justify-content: right;
+    margin-right: 15px;
+  }
+  .favor_sec {
+    margin: 80px 0;
+  }
+</style>
+<body>
+  <div class="myPage">
+    <div class="myPage_header">
+      <div class="mpImg"><div class="mpImg-1"><img src="img/ctoun.png" alt=""></div></div>
+      <div class="mpText">
+        <h2 id="userName">User Name</h2>
+        <p>User_email@email.com</p>
+      </div>
+    </div>
+  </div>
+  <div class="MPtab">
+    <ul>
+      <li class="MPtab_1">최근 본 페이지</li>
+      <li>업로드한 이미지</li>
+    </ul>
+  </div>
+  <section class="MPmain">
+    <section class="MP_recentPage MP_page_on">
+      <div class="favor_sec">
+        <div class="favorites-gnb">
+          <p class="name">작가정보</p>
+          <p class="date"></p>
+        </div>
+        <div class="favorites-main">
+          <img src="img/banner01.png" alt="">
+        </div>
+        <div class="share">
+          <img src="img/heart.png" alt="" class="main_heart">
+          <img src="img/share.png" alt="">
+        </div>
+      </div>
+      <div class="favor_sec">
+        <div class="favorites-gnb">
+          <p class="name">작가정보</p>
+          <p class="date"></p>
+        </div>
+        <div class="favorites-main">
+          <img src="img/banner01.png" alt="">
+        </div>
+        <div class="share">
+          <img src="img/heart.png" alt="" class="main_heart">
+          <img src="img/share.png" alt="">
+        </div>
+      </div>
+    </section>
+    <section class="MP_favorPage">
+      <div class="favor_sec">
+        <div class="favorites-gnb">
+          <p class="name">작가정보</p>
+          <p class="date"></p>
+        </div>
+        <div class="favorites-main">
+          <img src="img/photoshop001.png" alt="">
+        </div>
+        <div class="share">
+          <img src="img/heart.png" alt="" class="main_heart">
+          <img src="img/share.png" alt="">
+        </div>
+      </div>
+      <div class="favor_sec">
+        <div class="favorites-gnb">
+          <p class="name">작가정보</p>
+          <p class="date"></p>
+        </div>
+        <div class="favorites-main">
+          <img src="img/photoshop001.png" alt="">
+        </div>
+        <div class="share">
+          <img src="img/heart.png" alt="" class="main_heart">
+          <img src="img/share.png" alt="">
+        </div>
+      </div>
+    </section>
+  </section>
+  <footer>
+    <div class="footerMain">
+      <a href="main.html"><img src="img/home_6051755.png" alt="" /></a>
+      <img src="img/free-icon-search-149852.png" alt="" class="serchMe" />
+      <a href="favorites.html"><img src="img/heart.png" alt="" /></a>
+      <a href="upload.html"
+        ><img src="img/free-icon-file-upload-2985037.png" alt=""
+      /></a>
+      <a href="mypage.html"
+        ><img src="img/free-icon-user-9376373.png" alt=""
+      /></a>
+    </div>
+  </footer>
+
+  <script src="js/setting.js"></script>
+  <script src="js/mypage.js"></script>
+  <script>
+    //database 연결
+    const db = firebase.firestore(); //텍스트 중심의 데이터 저장소
+    const storage = firebase.storage(); //이미지나 오디오 저장소
+    let userInfo = localStorage.getItem('user');
+
+    console.log(userInfo)
+    
+    $('#userName').html(JSON.parse(userInfo).displayName)
+    let queryString = new URLSearchParams(window.location.search); //쿼리 스트링을 오브젝트로 변환
+    console.log(queryString.get('id'));
+
+    
+    //doc가 가지고 있는 id값의 doc 정보를 보기
+    db.collection("limbo")
+      .doc(queryString.get("id"))
+      .get()
+      .then((result) => {
+        console.log(result.data());
+
+        let detailInfo = `
+        <div class="detail-area">
+          <div class="detail-pic my-4">
+              <img src="${result.data().이미지}" alt="">
+          </div>
+          <h3><span>작성자 :</span>${result.data().작성자}</h3>
+          <hr>
+          <h4 class="title">${result.data().상품명}</h4>
+          <p class="desc"><span>설명 : </span>${
+            result.data().설명
+          }</p>
+          <p class="date"><span>작성일 : </span>${uploadDate}</p>
+          <p class="price"><span>가격 : </span>${
+            result.data().가격
+          }</p>
+        </div>`;
+        document
+          .querySelector(".container")
+          .insertAdjacentHTML("beforeend", detailInfo);
+      });
+
+    $("#modifyButton").on("click", function () {
+      window.location.href = "detail_modify.html?id=" + queryString.get("id");
+    });
+
+  </script>
+</body>
+</html>

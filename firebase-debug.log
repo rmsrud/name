@@ -1,0 +1,111 @@
+[debug] [2023-08-25T02:57:54.214Z] ----------------------------------------------------------------------
+[debug] [2023-08-25T02:57:54.217Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\310-28\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2023-08-25T02:57:54.217Z] CLI Version:   12.4.8
+[debug] [2023-08-25T02:57:54.218Z] Platform:      win32
+[debug] [2023-08-25T02:57:54.218Z] Node Version:  v18.17.1
+[debug] [2023-08-25T02:57:54.220Z] Time:          Fri Aug 25 2023 11:57:54 GMT+0900 (대한민국 표준시)
+[debug] [2023-08-25T02:57:54.221Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-08-25T02:57:54.412Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-08-25T02:57:54.413Z] > authorizing via signed-in user (yoaniss99@gmail.com)
+[debug] [2023-08-25T02:57:54.413Z] [iam] checking project blank-1d72a for permissions ["firebase.projects.get"]
+[debug] [2023-08-25T02:57:54.415Z] > refreshing access token with scopes: []
+[debug] [2023-08-25T02:57:54.417Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-08-25T02:57:54.418Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-08-25T02:57:54.620Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-08-25T02:57:54.621Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-08-25T02:57:54.637Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/blank-1d72a:testIamPermissions [none]
+[debug] [2023-08-25T02:57:54.637Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/blank-1d72a:testIamPermissions x-goog-quota-user=projects/blank-1d72a
+[debug] [2023-08-25T02:57:54.638Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/blank-1d72a:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-08-25T02:57:55.423Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/blank-1d72a:testIamPermissions 200
+[debug] [2023-08-25T02:57:55.423Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/blank-1d72a:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-08-25T02:57:55.425Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a [none]
+[debug] [2023-08-25T02:57:55.838Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a 200
+[debug] [2023-08-25T02:57:55.838Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a {"projectId":"blank-1d72a","projectNumber":"727833147547","displayName":"blank","name":"projects/blank-1d72a","resources":{"hostingSite":"blank-1d72a","realtimeDatabaseInstance":"blank-1d72a-default-rtdb","storageBucket":"blank-1d72a.appspot.com","locationId":"asia-northeast3"},"state":"ACTIVE","etag":"1_fd26215b-1456-4486-9631-4fe152235ac4"}
+[info] 
+[info] === Serving from 'C:\java web\web\Limbo'...
+[info] 
+[debug] [2023-08-25T02:57:55.845Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/blank-1d72a/sites 
+[debug] [2023-08-25T02:57:56.650Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/blank-1d72a/sites 200
+[debug] [2023-08-25T02:57:56.650Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/blank-1d72a/sites {"sites":[{"name":"projects/blank-1d72a/sites/blank-1d72a","defaultUrl":"https://blank-1d72a.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-08-25T02:57:56.651Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a/webApps/-/config [none]
+[debug] [2023-08-25T02:57:57.514Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a/webApps/-/config 200
+[debug] [2023-08-25T02:57:57.514Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a/webApps/-/config {"projectId":"blank-1d72a","databaseURL":"https://blank-1d72a-default-rtdb.asia-southeast1.firebasedatabase.app","storageBucket":"blank-1d72a.appspot.com","locationId":"asia-northeast3","apiKey":"AIzaSyB_GbFNggyrLBGkpcH28TvApyRPOG85LNY","authDomain":"blank-1d72a.firebaseapp.com","messagingSenderId":"727833147547"}
+[debug] [2023-08-25T02:57:57.521Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a [none]
+[debug] [2023-08-25T02:57:57.898Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a 200
+[debug] [2023-08-25T02:57:57.898Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a {"projectId":"blank-1d72a","projectNumber":"727833147547","displayName":"blank","name":"projects/blank-1d72a","resources":{"hostingSite":"blank-1d72a","realtimeDatabaseInstance":"blank-1d72a-default-rtdb","storageBucket":"blank-1d72a.appspot.com","locationId":"asia-northeast3"},"state":"ACTIVE","etag":"1_fd26215b-1456-4486-9631-4fe152235ac4"}
+[info] i  hosting[blank-1d72a]: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] +  hosting[blank-1d72a]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[info] i  hosting: ::1 - - [25/Aug/2023:02:58:06 +0000] "GET / HTTP/1.1" 404 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [25/Aug/2023:02:58:06 +0000] \"GET / HTTP/1.1\" 404 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [25/Aug/2023:02:58:07 +0000] "GET /favicon.ico HTTP/1.1" 404 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [25/Aug/2023:02:58:07 +0000] \"GET /favicon.ico HTTP/1.1\" 404 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [25/Aug/2023:02:58:10 +0000] "GET / HTTP/1.1" 404 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [25/Aug/2023:02:58:10 +0000] \"GET / HTTP/1.1\" 404 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [25/Aug/2023:02:58:12 +0000] "GET / HTTP/1.1" 404 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [25/Aug/2023:02:58:12 +0000] \"GET / HTTP/1.1\" 404 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36\""}}
+[debug] [2023-08-25T02:59:44.693Z] ----------------------------------------------------------------------
+[debug] [2023-08-25T02:59:44.696Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\310-28\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2023-08-25T02:59:44.697Z] CLI Version:   12.4.8
+[debug] [2023-08-25T02:59:44.697Z] Platform:      win32
+[debug] [2023-08-25T02:59:44.697Z] Node Version:  v18.17.1
+[debug] [2023-08-25T02:59:44.700Z] Time:          Fri Aug 25 2023 11:59:44 GMT+0900 (대한민국 표준시)
+[debug] [2023-08-25T02:59:44.700Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-08-25T02:59:44.942Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-08-25T02:59:44.943Z] > authorizing via signed-in user (yoaniss99@gmail.com)
+[debug] [2023-08-25T02:59:44.944Z] [iam] checking project blank-1d72a for permissions ["firebase.projects.get"]
+[debug] [2023-08-25T02:59:44.948Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/blank-1d72a:testIamPermissions [none]
+[debug] [2023-08-25T02:59:44.949Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/blank-1d72a:testIamPermissions x-goog-quota-user=projects/blank-1d72a
+[debug] [2023-08-25T02:59:44.949Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/blank-1d72a:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-08-25T02:59:45.797Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/blank-1d72a:testIamPermissions 200
+[debug] [2023-08-25T02:59:45.797Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/blank-1d72a:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-08-25T02:59:45.799Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a [none]
+[debug] [2023-08-25T02:59:46.187Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a 200
+[debug] [2023-08-25T02:59:46.187Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a {"projectId":"blank-1d72a","projectNumber":"727833147547","displayName":"blank","name":"projects/blank-1d72a","resources":{"hostingSite":"blank-1d72a","realtimeDatabaseInstance":"blank-1d72a-default-rtdb","storageBucket":"blank-1d72a.appspot.com","locationId":"asia-northeast3"},"state":"ACTIVE","etag":"1_fd26215b-1456-4486-9631-4fe152235ac4"}
+[info] 
+[info] === Serving from 'C:\java web\web\Limbo'...
+[info] 
+[debug] [2023-08-25T02:59:46.193Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/blank-1d72a/sites 
+[debug] [2023-08-25T02:59:46.922Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/blank-1d72a/sites 200
+[debug] [2023-08-25T02:59:46.922Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/blank-1d72a/sites {"sites":[{"name":"projects/blank-1d72a/sites/blank-1d72a","defaultUrl":"https://blank-1d72a.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-08-25T02:59:46.923Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a/webApps/-/config [none]
+[debug] [2023-08-25T02:59:47.710Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a/webApps/-/config 200
+[debug] [2023-08-25T02:59:47.710Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a/webApps/-/config {"projectId":"blank-1d72a","databaseURL":"https://blank-1d72a-default-rtdb.asia-southeast1.firebasedatabase.app","storageBucket":"blank-1d72a.appspot.com","locationId":"asia-northeast3","apiKey":"AIzaSyB_GbFNggyrLBGkpcH28TvApyRPOG85LNY","authDomain":"blank-1d72a.firebaseapp.com","messagingSenderId":"727833147547"}
+[debug] [2023-08-25T02:59:47.718Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a [none]
+[debug] [2023-08-25T02:59:48.071Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a 200
+[debug] [2023-08-25T02:59:48.071Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a {"projectId":"blank-1d72a","projectNumber":"727833147547","displayName":"blank","name":"projects/blank-1d72a","resources":{"hostingSite":"blank-1d72a","realtimeDatabaseInstance":"blank-1d72a-default-rtdb","storageBucket":"blank-1d72a.appspot.com","locationId":"asia-northeast3"},"state":"ACTIVE","etag":"1_fd26215b-1456-4486-9631-4fe152235ac4"}
+[info] i  hosting[blank-1d72a]: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] +  hosting[blank-1d72a]: Local server: http://localhost:5002 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5002\u001b[22m\u001b[24m"}}
+[info] i  hosting: ::1 - - [25/Aug/2023:03:01:11 +0000] "GET / HTTP/1.1" 404 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [25/Aug/2023:03:01:11 +0000] \"GET / HTTP/1.1\" 404 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36\""}}
+[info] i  hosting: ::1 - - [25/Aug/2023:03:01:12 +0000] "GET /favicon.ico HTTP/1.1" 404 - "http://localhost:5002/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [25/Aug/2023:03:01:12 +0000] \"GET /favicon.ico HTTP/1.1\" 404 - \"http://localhost:5002/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36\""}}
+[debug] [2023-08-25T05:57:14.334Z] ----------------------------------------------------------------------
+[debug] [2023-08-25T05:57:14.339Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\310-28\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2023-08-25T05:57:14.340Z] CLI Version:   12.4.8
+[debug] [2023-08-25T05:57:14.341Z] Platform:      win32
+[debug] [2023-08-25T05:57:14.341Z] Node Version:  v18.17.1
+[debug] [2023-08-25T05:57:14.344Z] Time:          Fri Aug 25 2023 14:57:14 GMT+0900 (대한민국 표준시)
+[debug] [2023-08-25T05:57:14.344Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-08-25T05:57:14.558Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-08-25T05:57:14.559Z] > authorizing via signed-in user (yoaniss99@gmail.com)
+[debug] [2023-08-25T05:57:14.565Z] [iam] checking project blank-1d72a for permissions ["firebase.projects.get"]
+[debug] [2023-08-25T05:57:14.569Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/blank-1d72a:testIamPermissions [none]
+[debug] [2023-08-25T05:57:14.569Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/blank-1d72a:testIamPermissions x-goog-quota-user=projects/blank-1d72a
+[debug] [2023-08-25T05:57:14.570Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/blank-1d72a:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-08-25T05:57:15.353Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/blank-1d72a:testIamPermissions 200
+[debug] [2023-08-25T05:57:15.354Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/blank-1d72a:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-08-25T05:57:15.355Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a [none]
+[debug] [2023-08-25T05:57:15.770Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a 200
+[debug] [2023-08-25T05:57:15.771Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a {"projectId":"blank-1d72a","projectNumber":"727833147547","displayName":"blank","name":"projects/blank-1d72a","resources":{"hostingSite":"blank-1d72a","realtimeDatabaseInstance":"blank-1d72a-default-rtdb","storageBucket":"blank-1d72a.appspot.com","locationId":"asia-northeast3"},"state":"ACTIVE","etag":"1_fd26215b-1456-4486-9631-4fe152235ac4"}
+[info] 
+[info] === Serving from 'C:\java web\web\Limbo'...
+[info] 
+[debug] [2023-08-25T05:57:15.777Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/blank-1d72a/sites 
+[debug] [2023-08-25T05:57:16.499Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/blank-1d72a/sites 200
+[debug] [2023-08-25T05:57:16.500Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/blank-1d72a/sites {"sites":[{"name":"projects/blank-1d72a/sites/blank-1d72a","defaultUrl":"https://blank-1d72a.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-08-25T05:57:16.500Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a/webApps/-/config [none]
+[debug] [2023-08-25T05:57:17.257Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a/webApps/-/config 200
+[debug] [2023-08-25T05:57:17.257Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a/webApps/-/config {"projectId":"blank-1d72a","databaseURL":"https://blank-1d72a-default-rtdb.asia-southeast1.firebasedatabase.app","storageBucket":"blank-1d72a.appspot.com","locationId":"asia-northeast3","apiKey":"AIzaSyB_GbFNggyrLBGkpcH28TvApyRPOG85LNY","authDomain":"blank-1d72a.firebaseapp.com","messagingSenderId":"727833147547"}
+[debug] [2023-08-25T05:57:17.264Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a [none]
+[debug] [2023-08-25T05:57:17.659Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a 200
+[debug] [2023-08-25T05:57:17.659Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/blank-1d72a {"projectId":"blank-1d72a","projectNumber":"727833147547","displayName":"blank","name":"projects/blank-1d72a","resources":{"hostingSite":"blank-1d72a","realtimeDatabaseInstance":"blank-1d72a-default-rtdb","storageBucket":"blank-1d72a.appspot.com","locationId":"asia-northeast3"},"state":"ACTIVE","etag":"1_fd26215b-1456-4486-9631-4fe152235ac4"}
+[info] i  hosting[blank-1d72a]: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] +  hosting[blank-1d72a]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[info] i  hosting: ::1 - - [25/Aug/2023:05:57:19 +0000] "GET / HTTP/1.1" 404 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [25/Aug/2023:05:57:19 +0000] \"GET / HTTP/1.1\" 404 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36\""}}

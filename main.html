@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메인페이지</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/header.css"/>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <!-- moment -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="js/setting.js"></script>
+    <script src="js/main.js"></script>
+    <style>
+      .main , .main_tabArea {
+        width: 100%;
+        margin-top: 150px;
+        padding: 30px;
+        box-sizing: border-box;
+        clear: both;
+        background: #f5f5f5;
+      }
+      .mainTab {
+        display: flex;
+        justify-content: end;
+        font-weight: bold;
+      }
+      .mainTab span {
+        padding: 5px 0;
+        color: #ccc;
+      }
+      .mainTab span:first-child {
+        margin-right: 20px;
+      }
+      .mainTab span.mainTab_on {
+        color: #000;
+        border-bottom: 2px solid #000;
+      }
+      .realMain {
+        margin: 30px 0;
+        padding: 25px;
+        background: #fff;
+      }
+      .artist_info {
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .artist_info img {
+        display: block;
+      }
+      .artist_info .artist_infoText {
+        display: flex;
+      }
+      .artist_info p {
+        display: flex;
+        align-items: center;
+      }
+      .artist_info .artist_img {
+        display: block;
+        height: 50px;
+        margin-right: 10px;
+      }
+      .artist_info .artist_infoText {
+        display: flex;
+      }
+      .artist_info .artist_infoHeart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .artist_info .artist_infoHeart .main_heart {
+        margin-right: 20px;
+      }
+      .artist_info .main_img {
+        width: 100%;
+      }
+      .main_img img {
+        max-width: 100%;
+        height: 100%;
+        border-radius: 50px;
+        display: block;
+      }
+      .mainTab_on {
+        display: block;
+      }
+      section {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="headerMain">
+        <div class="headerTitle">
+          <a href="main.html"><img src="img/limbo_logo.png" alt="" /></a>
+        </div>
+        <div class="headerSerch">
+          <div class="headerSerachBack">
+            <input type="text" placeholder="검색기능 구현중" />
+            <img src="img/free-icon-search-149852.png" alt="" class="serchMe" />
+          </div>
+        </div>
+      </div>
+      <div class="headerList">
+        <ul>
+          <li>드로잉</li>
+          <li>일러스트</li>
+          <li>아크릴화/파스텔화</li>
+          <li>유화/수채화</li>
+        </ul>
+      </div>
+    </header>
+    <div class="main">
+      <div class="mainTab">
+        <span class="mainTab_on">최신순</span>
+        <span>인기순</span>
+      </div>
+      <div class="realMain" id="limboMain">
+        <!-- <div class="artist_info">
+          <div class="artist_infoText">
+            <a href="artist_page.html"
+              ><img src="img/limbo_logo.png" alt="" class="artist_img"
+            /></a>
+            <p class="name">작가정보</p>
+            <p class="date"></p>
+          </div>
+          <div class="artist_infoHeart">
+            <img src="img/heart.png" alt="" class="main_heart" />
+            <img src="img/free-icon-share-638862.png" alt="" />
+          </div>
+        </div>
+        <div class="main_img">
+          <a href="page.html"><img src="img/photoshop001.png" alt="" /></a>
+        </div> -->
+      </div>
+    </div>
+    <div class="main_tabArea">
+      <section id="main-drawing">
+        <!-- <div class="mainTab">
+          <span class="mainTab_on">최신순</span>
+          <span>인기순</span>
+        </div>
+        <div class="realMain">
+          <div class="artist_info">
+            <div class="artist_infoText">
+              <a href="artist_page.html"
+                ><img src="img/limbo_logo.png" alt="" class="artist_img"
+              /></a>
+              <p class="name">작가정보</p>
+              <p class="date"></p>
+            </div>
+            <div class="artist_infoHeart">
+              <img src="img/heart.png" alt="" class="main_heart" />
+              <img src="img/free-icon-share-638862.png" alt="" />
+            </div>
+          </div>
+          <div class="main_img">
+            <a href="page.html"><img src="img/ctoun.png" alt="" /></a>
+          </div>
+        </div> -->
+      </section>
+      <section id="main-illustration">
+        <!-- <div class="mainTab">
+          <span class="mainTab_on">최신순</span>
+          <span>인기순</span>
+        </div>
+        <div class="realMain">
+          <div class="artist_info">
+            <div class="artist_infoText">
+              <a href="artist_page.html"
+                ><img src="img/limbo_logo.png" alt="" class="artist_img"
+              /></a>
+              <p class="name">작가정보</p>
+              <p class="date"></p>
+            </div>
+            <div class="artist_infoHeart">
+              <img src="img/heart.png" alt="" class="main_heart" />
+              <img src="img/free-icon-share-638862.png" alt="" />
+            </div>
+          </div>
+          <div class="main_img">
+            <a href="page.html"><img src="img/banner01.png" alt="" /></a>
+          </div>
+        </div> -->
+      </section>
+      <section id="main-acryl">
+       <!--  <div class="mainTab">
+          <span class="mainTab_on">최신순</span>
+          <span>인기순</span>
+        </div>
+        <div class="realMain">
+          <div class="artist_info">
+            <div class="artist_infoText">
+              <a href="artist_page.html"
+                ><img src="img/limbo_logo.png" alt="" class="artist_img"
+              /></a>
+              <p class="name">작가정보</p>
+              <p class="date"></p>
+            </div>
+            <div class="artist_infoHeart">
+              <img src="img/heart.png" alt="" class="main_heart" />
+              <img src="img/free-icon-share-638862.png" alt="" />
+            </div>
+          </div>
+          <div class="main_img">
+            <a href="page.html"><img src="img/photoshop001.png" alt="" /></a>
+          </div>
+        </div> -->
+      </section>
+      <section id="main-Watercolor">
+        <!-- <div class="mainTab">
+          <span class="mainTab_on">최신순</span>
+          <span>인기순</span>
+        </div>
+        <div class="realMain">
+          <div class="artist_info">
+            <div class="artist_infoText">
+              <a href="artist_page.html"
+                ><img src="img/limbo_logo.png" alt="" class="artist_img"
+              /></a>
+              <p class="name">작가정보</p>
+              <p class="date"></p>
+            </div>
+            <div class="artist_infoHeart">
+              <img src="img/heart.png" alt="" class="main_heart" />
+              <img src="img/free-icon-share-638862.png" alt="" />
+            </div>
+          </div>
+          <div class="main_img">
+            <a href="page.html"><img src="img/photoshop001.png" alt="" /></a>
+          </div>
+        </div> -->
+      </section>
+    </div>
+    <footer>
+      <div class="footerMain">
+        <a href="main.html"><img src="img/home_6051755.png" alt="" /></a>
+        <img src="img/free-icon-search-149852.png" alt="" class="serchMe" />
+        <a href="favorites.html"><img src="img/heart.png" alt="" /></a>
+        <a href="upload.html"
+          ><img src="img/free-icon-file-upload-2985037.png" alt=""
+        /></a>
+        <a href="mypage.html"
+          ><img src="img/free-icon-user-9376373.png" alt=""
+        /></a>
+      </div>
+    </footer>
+    <script>
+    //database 연결
+    const db = firebase.firestore();
+
+    db.collection("limbo")
+      .get()
+      .then((snapshot) => {
+        snapshot.forEach((doc) => {
+          console.log(doc.data());
+
+          let productInfo = `
+          <div class="artist_info">
+          <div class="artist_infoText">
+            <a href="artist_page.html"
+              ><img src="img/limbo_logo.png" alt="" class="artist_img"
+            /></a>
+            <p class="name">${doc.data().작성자}</p>
+            <p class="date"></p>
+          </div>
+          <div class="artist_infoHeart">
+            <img src="img/heart.png" alt="" class="main_heart" />
+            <img src="img/free-icon-share-638862.png" alt="" />
+          </div>
+        </div>
+        <div class="main_img">
+          <a href="page.html?id=${doc.id}"><img src="${doc.data().이미지}" alt="" /></a>
+        </div>`;
+          document
+          .getElementById("limboMain")
+          .insertAdjacentHTML("beforeend", productInfo);
+        });
+      });
+
+      db.collection("drawing")
+      .get()
+      .then((snapshot) => {
+        snapshot.forEach((doc) => {
+          console.log(doc.data());
+
+          let productInfo = `
+          <div class="mainTab">
+          <span class="mainTab_on">최신순</span>
+          <span>인기순</span>
+        </div>
+        <div class="realMain">
+          <div class="artist_info">
+            <div class="artist_infoText">
+              <a href="artist_page.html"
+                ><img src="img/limbo_logo.png" alt="" class="artist_img"
+              /></a>
+              <p class="name">${doc.data().작성자}</p>
+              <p class="date"></p>
+            </div>
+            <div class="artist_infoHeart">
+              <img src="img/heart.png" alt="" class="main_heart" />
+              <img src="img/free-icon-share-638862.png" alt="" />
+            </div>
+          </div>
+          <div class="main_img">
+            <a href="page.html"><img src="${doc.data().이미지}" alt="" /></a>
+          </div>
+        </div>`;
+          document
+          .getElementById("main-drawing")
+          .insertAdjacentHTML("beforeend", productInfo);
+        });
+      });
+
+      
+      db.collection("illustration")
+      .get()
+      .then((snapshot) => {
+        snapshot.forEach((doc) => {
+          console.log(doc.data());
+
+          let productInfo = `
+          <div class="mainTab">
+          <span class="mainTab_on">최신순</span>
+          <span>인기순</span>
+        </div>
+        <div class="realMain">
+          <div class="artist_info">
+            <div class="artist_infoText">
+              <a href="artist_page.html"
+                ><img src="img/limbo_logo.png" alt="" class="artist_img"
+              /></a>
+              <p class="name">${doc.data().작성자}</p>
+              <p class="date"></p>
+            </div>
+            <div class="artist_infoHeart">
+              <img src="img/heart.png" alt="" class="main_heart" />
+              <img src="img/free-icon-share-638862.png" alt="" />
+            </div>
+          </div>
+          <div class="main_img">
+            <a href="page.html"><img src="${doc.data().이미지}" alt="" /></a>
+          </div>
+        </div>`;
+          document
+          .getElementById("main-illustration")
+          .insertAdjacentHTML("beforeend", productInfo);
+        });
+      });
+
+
+      db.collection("acryl")
+      .get()
+      .then((snapshot) => {
+        snapshot.forEach((doc) => {
+          console.log(doc.data());
+
+          let productInfo = `
+          <div class="mainTab">
+          <span class="mainTab_on">최신순</span>
+          <span>인기순</span>
+        </div>
+        <div class="realMain">
+          <div class="artist_info">
+            <div class="artist_infoText">
+              <a href="artist_page.html"
+                ><img src="img/limbo_logo.png" alt="" class="artist_img"
+              /></a>
+              <p class="name">${doc.data().작성자}</p>
+              <p class="date"></p>
+            </div>
+            <div class="artist_infoHeart">
+              <img src="img/heart.png" alt="" class="main_heart" />
+              <img src="img/free-icon-share-638862.png" alt="" />
+            </div>
+          </div>
+          <div class="main_img">
+            <a href="page.html"><img src="${doc.data().이미지}" alt="" /></a>
+          </div>
+        </div>`;
+          document
+          .getElementById("main-acryl")
+          .insertAdjacentHTML("beforeend", productInfo);
+        });
+      });
+      db.collection("Watercolor")
+      .get()
+      .then((snapshot) => {
+        snapshot.forEach((doc) => {
+          console.log(doc.data());
+
+          let productInfo = `
+          <div class="mainTab">
+          <span class="mainTab_on">최신순</span>
+          <span>인기순</span>
+        </div>
+        <div class="realMain">
+          <div class="artist_info">
+            <div class="artist_infoText">
+              <a href="artist_page.html"
+                ><img src="img/limbo_logo.png" alt="" class="artist_img"
+              /></a>
+              <p class="name">${doc.data().작성자}</p>
+              <p class="date"></p>
+            </div>
+            <div class="artist_infoHeart">
+              <img src="img/heart.png" alt="" class="main_heart" />
+              <img src="img/free-icon-share-638862.png" alt="" />
+            </div>
+          </div>
+          <div class="main_img">
+            <a href="page.html"><img src="${doc.data().이미지}" alt="" /></a>
+          </div>
+        </div>`;
+          document
+          .getElementById("main-Watercolor")
+          .insertAdjacentHTML("beforeend", productInfo);
+        });
+      });
+    </script>
+  </body>
+</html>

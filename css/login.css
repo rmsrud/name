@@ -1,0 +1,63 @@
+@charset "utf-8";
+@import url('fonts.css');
+body {
+    font-size: 16px;
+    font-family: 'NanumSquareNeo', 'NanumSquareNeoLight', 'NanumSquareNeoBold';
+    color: #111;
+}
+@media screen and (max-width: 767px) {
+    #wrap {
+        padding: 5vw;
+    }
+    h2 {
+        text-align: center;
+        font-family: 'NanumSquareNeoBold';
+        margin-bottom: 15px;
+    }
+    .login_box {
+        width: 100%;
+        text-align: center;
+    }
+    .login_box input {
+        width: 60%;
+        height: 30px;
+        border-radius: 10px;
+        border: 1px solid #f6e056;
+        margin-bottom: 10px;
+    }
+    .join {
+        text-align: center;
+        margin-top: 15px;
+    }
+    #loginButton {
+        padding: 8px 25px;
+        background: #f6e056;
+        font-size: 14px;
+        color: #fff;
+        border-radius: 10px;
+        border: none;
+    }
+    .util {
+        text-align: center;
+    }
+    .util span {
+        font-size: 12px;
+    }
+    .util a + a:before {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 12px;
+        background: #ccc;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+    .auth {
+        text-align: center;
+        margin-top: 50px;
+    }
+    .auth button {
+        border: none;
+        background: transparent;
+    }
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>artistPage</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/jquery-ui.min.css" />
+  <link rel="stylesheet" href="css/jquery-ui.theme.min.css" />
+  <link rel="stylesheet" href="css/intro.css" />
+  <link rel="stylesheet" href="css/header.css">
+  <!-- jquery -->
+  <script src="js/jquery-3.7.0.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <!-- firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+  <!-- moment -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="js/setting.js"></script>
+  <style>
+    .art_header {
+      display: flex;
+      position: relative;
+      justify-content: space-around;
+      box-sizing: border-box;
+      background: #ccc;
+      height: 15vh;
+      border-bottom: 1px solid #000;
+    }
+    .imgArea {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .imgArea h2 {
+      font-weight: bold;
+    }
+    .imgArea img {
+      width: 80px;
+      height: 80px;
+      border: 1px solid #000;
+      border-radius: 80px;
+      margin-right: 30px;
+    }
+    .infoArea {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .infoArea > ul {
+      display: flex;
+    }
+    .infoArea > ul > li {
+      margin-right: 25px;
+    }
+    .infoEtc {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+    .infoEtc img {
+      margin-right: 10px;
+    }
+    .art_tag {
+      display: flex;
+      border-bottom: 1px solid #000;
+      padding: 10px;
+    }
+    .art_tag p {
+      margin-right: 10px;
+      font-weight: 600;
+    }
+    .art_main {
+      padding: 0 50px;
+    }
+    /* favor */
+    .favorites h2 {
+      font-size: 32px;
+      margin: 20px 0;
+    }
+    .favorites-gnb {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    .favorites-main {
+      width: 100%;
+    }
+    .favorites-main img {
+      width: 100%;
+      border-radius: 25px;
+    }
+    .share {
+      display: flex;
+      justify-content: right;
+    }
+    .share img {
+      display: flex;
+      justify-content: right;
+      margin-right: 15px;
+    }
+    .favor_sec {
+      margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+  <div class="art_header">
+    <div class="imgArea">
+      <img src="img/ctoun.png" alt="">
+      <h2>크툰</h2>
+    </div>
+    <div class="infoArea">
+      <ul>
+        <li>팔로워
+          <ul>
+            <li>?명</li>
+          </ul>
+        </li>
+        <li>팔로잉
+          <ul>
+            <li>?명</li>
+          </ul>
+        </li>
+        <li>게시문
+          <ul>
+            <li>?</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="infoEtc">
+      <img src="img/heart.png" alt="">
+      <img src="img/free-icon-settings-cog-70314.png" alt="">
+    </div>
+  </div>
+  <div class="art_tag">
+    <p>#드로잉 전문</p>
+    <p>#무료 이미지제공</p>
+  </div>
+  <div class="art_main">
+    <div class="favor_sec">
+      <div class="favorites-gnb">
+        <p class="name">작가정보</p>
+        <p class="date"></p>
+      </div>
+      <div class="favorites-main">
+        <img src="img/banner01.png" alt="" />
+      </div>
+      <div class="share">
+        <img src="img/heart.png" alt="" class="main_heart">
+        <img src="img/share.png" alt="" />
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footerMain">
+      <a href="main.html"><img src="img/home_6051755.png" alt="" /></a>
+      <img src="img/free-icon-search-149852.png" alt="" class="serchMe" />
+      <a href="favorites.html"><img src="img/heart.png" alt="" /></a>
+      <a href="upload.html"
+        ><img src="img/free-icon-file-upload-2985037.png" alt=""
+      /></a>
+      <a href="mypage.html"
+        ><img src="img/free-icon-user-9376373.png" alt=""
+      /></a>
+    </div>
+  </footer>
+</body>
+</html>
